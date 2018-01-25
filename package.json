@@ -1,0 +1,16 @@
+{
+  "name": "nodema",
+  "version": "1.0.0",
+  "description": "Meme app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Margus Andrei",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.0.1",
+    "pug": "^2.0.0-rc.4"
+  }
+}
