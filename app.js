@@ -28,9 +28,12 @@ app.set('view engine', 'pug');
 
 //Body Oarser Middleware
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+//Set Public Folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Home Route
 app.get('/', function(req, res){
@@ -43,6 +46,15 @@ app.get('/', function(req, res){
         memes: memes
       });
     }
+  });
+});
+
+//Get Singel Meme
+app.get('/meme/:id', function(req, res){
+  Meme.findById(req.params.id, function(err, meme){
+    res.render('meme',{
+      meme:meme
+    });
   });
 });
 

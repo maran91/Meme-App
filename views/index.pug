@@ -1,7 +1,8 @@
 extends layout
 
 block content
-    h1 #{title}
-    ul
-      each meme, i in memes
-        li= meme.title
+  h1 #{title}
+  ul.list-group
+    each meme, i in memes
+      li.list-group-item
+        a(href="/meme/"+meme._id)= meme.title
